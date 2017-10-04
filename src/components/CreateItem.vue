@@ -14,7 +14,8 @@
             <input type="text" class="form-control col-md-6" v-model="item.price">
         </div>
         <div class="col-sm-12">
-          <button>Add Item</button>
+          <!-- <button v-on:click="addItem">Add Item</button> -->
+          <a href="#" class="btn btn-info" v-on:click="addItem" role="button">Add Item</a>
         </div>
       </div>
 
@@ -29,12 +30,12 @@ export default {
         }
     },
     methods: {
-      addItem2(){
-        console.log("Function Calling...");
+      addItem(){
+     //   console.log("Function Calling input paramater is ..",this.item);
       let uri = 'http://localhost:4000/items/add';
-        // this.axios.post(uri, this.item).then((response) => {
-        //   console.log("response ",response)
-        // })
+        this.axios.post(uri, this.item).then((response) => {
+          console.log("response ",response)
+        })
       }
 }
 }
