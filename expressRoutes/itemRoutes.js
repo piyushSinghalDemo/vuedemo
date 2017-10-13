@@ -47,7 +47,6 @@ itemRoutes.route('/update/:id').post(function (req, res) {
     else {
       item.name = req.body.name;
       item.price = req.body.price;
-
       item.save().then(item => {
           res.json('Update complete');
       })
